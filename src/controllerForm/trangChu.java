@@ -12,7 +12,9 @@ import java.util.Vector;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 import javax.swing.table.DefaultTableModel;
+
 
 
 
@@ -72,6 +74,7 @@ public class trangChu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+
         Sex = new javax.swing.ButtonGroup();
         JpBody = new javax.swing.JPanel();
         JpQuanLyNhanVien = new javax.swing.JPanel();
@@ -102,18 +105,23 @@ public class trangChu extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         btnX = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
+
         JpDiemDanh = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         JpThongKe = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+
         JpChinhSuaThongTin = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+
         JpDoiMatKhau = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         JpThongTin = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+
+
         JpTroGiup = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -130,6 +138,7 @@ public class trangChu extends javax.swing.JFrame {
         MtTroGiup = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
 
         jLabel6.setText("Quản lý nhân viên");
 
@@ -303,6 +312,7 @@ public class trangChu extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE))
         );
 
+
         JpDiemDanh.setLayout(null);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -327,6 +337,7 @@ public class trangChu extends javax.swing.JFrame {
 
         jLabel1.setText("Thống kê");
 
+
         jLabel5.setText("Chỉnh sửa thông");
 
         javax.swing.GroupLayout JpChinhSuaThongTinLayout = new javax.swing.GroupLayout(JpChinhSuaThongTin);
@@ -346,11 +357,13 @@ public class trangChu extends javax.swing.JFrame {
                 .addContainerGap(447, Short.MAX_VALUE))
         );
 
+
         javax.swing.GroupLayout JpThongKeLayout = new javax.swing.GroupLayout(JpThongKe);
         JpThongKe.setLayout(JpThongKeLayout);
         JpThongKeLayout.setHorizontalGroup(
             JpThongKeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpThongKeLayout.createSequentialGroup()
+
                 .addContainerGap(675, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(378, 378, 378))
@@ -358,14 +371,17 @@ public class trangChu extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(JpChinhSuaThongTin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+
         );
         JpThongKeLayout.setVerticalGroup(
             JpThongKeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JpThongKeLayout.createSequentialGroup()
                 .addGap(153, 153, 153)
                 .addComponent(jLabel1)
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JpChinhSuaThongTin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+
         );
 
         jLabel2.setText("Đổi mật khẩu");
@@ -406,6 +422,7 @@ public class trangChu extends javax.swing.JFrame {
                 .addContainerGap(423, Short.MAX_VALUE))
         );
 
+
         jLabel7.setText("Trợ giúp");
 
         javax.swing.GroupLayout JpTroGiupLayout = new javax.swing.GroupLayout(JpTroGiup);
@@ -437,6 +454,7 @@ public class trangChu extends javax.swing.JFrame {
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JpThongTin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                 .addComponent(JpQuanLyNhanVien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JpTroGiup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -451,6 +469,7 @@ public class trangChu extends javax.swing.JFrame {
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JpThongTin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                 .addComponent(JpQuanLyNhanVien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JpTroGiup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -474,6 +493,7 @@ public class trangChu extends javax.swing.JFrame {
         });
         jMenu2.add(MtThongke);
 
+
         MtThongTin.setText("Thông tin cá nhân");
         MtThongTin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -481,6 +501,7 @@ public class trangChu extends javax.swing.JFrame {
             }
         });
         jMenu2.add(MtThongTin);
+
 
         MtChinhSuaThongTin.setText("Chỉnh sửa thông tin");
         MtChinhSuaThongTin.addActionListener(new java.awt.event.ActionListener() {
@@ -505,6 +526,7 @@ public class trangChu extends javax.swing.JFrame {
 
         jMenu3.setText("Quản lý");
 
+
         MtQuanLyNv.setText("Nhân viên");
         MtQuanLyNv.setEnabled(false);
         MtQuanLyNv.addActionListener(new java.awt.event.ActionListener() {
@@ -513,6 +535,7 @@ public class trangChu extends javax.swing.JFrame {
             }
         });
         jMenu3.add(MtQuanLyNv);
+
 
         jMenuBar1.add(jMenu3);
 
@@ -573,20 +596,27 @@ public class trangChu extends javax.swing.JFrame {
         rmAndAddJpanel(JpChinhSuaThongTin);
     }//GEN-LAST:event_MtChinhSuaThongTinActionPerformed
 
-    private void MtDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MtDoiMatKhauActionPerformed
+
+    private void MtDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
         rmAndAddJpanel(JpDoiMatKhau);
-    }//GEN-LAST:event_MtDoiMatKhauActionPerformed
+    }                                            
 
-    private void MtDiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MtDiemDanhActionPerformed
+    private void MtDiemDanhActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
         rmAndAddJpanel(JpDiemDanh);
-    }//GEN-LAST:event_MtDiemDanhActionPerformed
+    }                                          
 
     private void MtQuanLyNvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MtQuanLyNvActionPerformed
         // TODO add your handling code here:
         rmAndAddJpanel(JpQuanLyNhanVien);
     }//GEN-LAST:event_MtQuanLyNvActionPerformed
+
+
+
+   
+
+   
 
     private void MtTroGiupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MtTroGiupActionPerformed
         // TODO add your handling code here:
@@ -661,21 +691,26 @@ public class trangChu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
+
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
