@@ -5,16 +5,12 @@
  */
 package Database;
 
-import Models.MdLevel;
 import Models.MdNhanVien;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -63,49 +59,31 @@ public class dbNhanVien {
         }
         return ds;
     }
-    
-    
-    public boolean addNV(MdNhanVien NV) 
-    {
-//        Date date = new Date();
-        Connection cnn = DB.connectionCSDL();
-        if(cnn!=null)
-        {
-            String sql = "INSERT INTO tbSinhvien VALUES(NULL,?,?,?,?,?,?,?,?,'2018-10-25','2018-10-25','1975-12-06',0,30,1,NULL,?,?)";
-           
-            SimpleDateFormat formatDate = new SimpleDateFormat("dd-mm-yyyy");
-            PreparedStatement stm;
-            try {
-                stm = cnn.prepareStatement(sql);
-                stm.setString(1, NV.email);
-                stm.setString(2, NV.name);
-                stm.setString(3, NV.password);
-                stm.setInt(4,  Integer.parseInt(NV.sex));
-                stm.setString(5, NV.address);
-                stm.setDate(6, (Date) formatDate.parse(NV.birthday));
-                stm.setInt(7, Integer.parseInt(NV.auther));
-                stm.setInt(8, Integer.parseInt(NV.level));
-//                stm.setInt(9, Date());
-//                stm.setInt(10, Date());
-            
-                int n = stm.executeUpdate();
-                if(n<=0)
-                    return false;
-                else
-                    return true;
-            } catch (SQLException ex) {
-                Logger.getLogger(dbNhanVien.class.getName()).log(Level.SEVERE, null, ex);
-                return false;
-            } catch (ParseException ex) {
-                Logger.getLogger(dbNhanVien.class.getName()).log(Level.SEVERE, null, ex);
-                return false;
-            }
-                
-            
-        }
-        else
-            return false;
-    }
-
-
+//    public boolean ThemSinhvien(clsSinhvien sv)
+//    {
+//        Connection cnn = Database.KetnoiCSDL();
+//        if(cnn!=null)
+//        {
+//            String sql = "INSERT INTO tbSinhvien VALUES(NULL,?,?,?,?,?)";
+//            try {
+//                PreparedStatement stm = cnn.prepareStatement(sql);
+//                stm.setString(1, sv.masv);
+//                stm.setString(2, sv.hoten);
+//                stm.setBoolean(3, sv.gioitinh);
+//                stm.setString(4, sv.diachi);
+//                stm.setInt(5, sv.malop);
+//                int n = stm.executeUpdate();
+//                if(n<=0)
+//                    return false;
+//                else
+//                    return true;
+//            } catch (SQLException ex) {
+//                Logger.getLogger(tbLophoc.class.getName()).log(Level.SEVERE, null, ex);
+//                return false;
+//            }
+//        }
+//        
+//        else
+//            return false;
+//    }
 }
