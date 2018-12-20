@@ -72,7 +72,12 @@ public class dbNhanVien {
         if(cnn!=null)
         {
             String sql = "INSERT INTO tbSinhvien VALUES(NULL,?,?,?,?,?,?,?,?,'2018-10-25','2018-10-25','1975-12-06',0,30,1,NULL,?,?)";
-           
+//            https://gpcoder.com/2217-lay-ngay-gio-hien-tai-trong-java/
+            long millis=System.currentTimeMillis();  
+            Date date=new Date(millis);  
+//            System.out.println();  
+            
+            
             SimpleDateFormat formatDate = new SimpleDateFormat("dd-mm-yyyy");
             PreparedStatement stm;
             try {
@@ -85,8 +90,8 @@ public class dbNhanVien {
                 stm.setDate(6, (Date) formatDate.parse(NV.birthday));
                 stm.setInt(7, Integer.parseInt(NV.auther));
                 stm.setInt(8, Integer.parseInt(NV.level));
-//                stm.setInt(9, Date());
-//                stm.setInt(10, Date());
+//                stm.setDate(9, date);
+//                stm.setDate(10, Date());
             
                 int n = stm.executeUpdate();
                 if(n<=0)
