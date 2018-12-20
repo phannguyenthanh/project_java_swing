@@ -66,6 +66,7 @@ public class trangChu extends javax.swing.JFrame {
         cbmp.insertElementAt("Chọn Quuyền", 2);
         cbxPremission.setModel(cbmp);
         
+        
         cbxPremission.setSelectedIndex(2);
     }
     public void HienthiDSUser()
