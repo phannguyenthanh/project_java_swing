@@ -13,6 +13,7 @@ import java.awt.Label;
 import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -58,6 +59,19 @@ public class trangChu extends javax.swing.JFrame {
         cbxLevels.setSelectedIndex(0);
         
     }
+//    public  void addLvCbx(JComboBox cbb, int chonmalop)
+//    {
+//        //tạo mảng chứa các lớp học
+//        dbLevel dblv = new dbLevel();
+//        Vector<MdLevel> selecLv = dblv.selectLv();
+//       
+//        //chèn các lớp học vào cbbLophoc
+//        DefaultComboBoxModel cbm = new DefaultComboBoxModel(selecLv.);
+//        
+//        cbb.setModel(cbm);
+//        cbm.insertElementAt("Chọn lớp học", 0);
+//        cbb.setSelectedIndex(0);
+//    }
     public void addPermission(){
         DefaultComboBoxModel cbmp = new DefaultComboBoxModel();
        
