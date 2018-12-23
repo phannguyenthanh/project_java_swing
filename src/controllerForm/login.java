@@ -13,12 +13,14 @@ import javax.swing.JOptionPane;
  * @author thanh
  */
 public class login extends javax.swing.JFrame {
-
+    String userName;
+    String pass;
+    
     /**
      * Creates new form login
      */
     public login() {
-        
+
         initComponents();
         this.setLocation(500, 100);
     }
@@ -102,35 +104,35 @@ public class login extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+
+        String name = txtName.getText();
+        String pass = txtPassword.getText();
         
-        String name    = txtName.getText();
-        String pass     = txtPassword.getText();
-        if(name.equals(""))
-        {
-            JOptionPane.showMessageDialog(null, "Xin vui lòng nhập email .","Thông báo",JOptionPane.WARNING_MESSAGE);
-        }
-        else if(pass.equals(""))
-        {
-            JOptionPane.showMessageDialog(null, "Xin vui long nhập mật khẩu .","Thông báo",JOptionPane.WARNING_MESSAGE);
-        }
-        else
-        {
-             dblogin dblogin = new dblogin();
-             int user = dblogin.checkLogin(name,pass);
-             int id_user = dblogin.Id_User(name,pass);
-        
-            if(user==1){
+        if (name.equals("")) {
+            JOptionPane.showMessageDialog(null, "Xin vui lòng nhập email .", "Thông báo", JOptionPane.WARNING_MESSAGE);
+        } else if (pass.equals("")) {
+            JOptionPane.showMessageDialog(null, "Xin vui long nhập mật khẩu .", "Thông báo", JOptionPane.WARNING_MESSAGE);
+        } else {
+            dblogin dblogin = new dblogin();
+            int user = dblogin.checkLogin(name, pass);
+            int id_user = dblogin.Id_User(name, pass);
+            System.out.println(id_user + " : login");
+            if (user == 1) {
+                this.userName = name;
+                this.pass = pass;
                 this.setVisible(false);
                 trangChu trangChu = new trangChu();
-                trangChu.Id = id_user;
+                trangChu trangChu1 = new trangChu(name,pass);
+                trangChu.detail(this.userName,this.pass);
+                trangChu.editlUser(this.userName,this.pass);
+                trangChu.HienthiDSUWorkday(id_user);
                 trangChu.setVisible(true);
-                
-            }else
-            {
-                JOptionPane.showMessageDialog(null, "Mật khẩu hoặc email không chính xác .","Thông báo",JOptionPane.WARNING_MESSAGE);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Mật khẩu hoặc email không chính xác .", "Thông báo", JOptionPane.WARNING_MESSAGE);
             }
         }
-       
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

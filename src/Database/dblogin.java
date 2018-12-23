@@ -23,7 +23,7 @@ public class dblogin {
         int result      = 0;
         Connection cnn  = DB.connectionCSDL();
         String sql ;
-        sql = "SELECT * FROM users"+" WHERE name = '"+name+"' AND password ='"+pass+"'";
+        sql = "SELECT * FROM users WHERE name = '"+name+"' AND password ='"+pass+"'";
 
         try {
             PreparedStatement ps = cnn.prepareStatement(sql);
@@ -52,7 +52,10 @@ public class dblogin {
             PreparedStatement ps = cnn.prepareStatement(sql);
             ResultSet rs;
             rs = ps.executeQuery(sql);
-//            result=rs.getInt("id");
+            while (rs.next()) {                
+                result=rs.getInt("id");
+            }
+            
             
             
             
@@ -63,4 +66,5 @@ public class dblogin {
         
         return result;
     }
+    
 }
