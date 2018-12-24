@@ -6,6 +6,9 @@
 package controllerForm;
 
 import Database.dblogin;
+import java.awt.AWTEvent;
+import java.awt.Toolkit;
+import java.awt.event.AWTEventListener;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,9 +16,10 @@ import javax.swing.JOptionPane;
  * @author thanh
  */
 public class login extends javax.swing.JFrame {
+
     String userName;
     String pass;
-    
+
     /**
      * Creates new form login
      */
@@ -107,7 +111,7 @@ public class login extends javax.swing.JFrame {
 
         String name = txtName.getText();
         String pass = txtPassword.getText();
-        
+
         if (name.equals("")) {
             JOptionPane.showMessageDialog(null, "Xin vui lòng nhập email .", "Thông báo", JOptionPane.WARNING_MESSAGE);
         } else if (pass.equals("")) {
@@ -116,15 +120,16 @@ public class login extends javax.swing.JFrame {
             dblogin dblogin = new dblogin();
             int user = dblogin.checkLogin(name, pass);
             int id_user = dblogin.Id_User(name, pass);
+
             System.out.println(id_user + " : login");
             if (user == 1) {
                 this.userName = name;
                 this.pass = pass;
                 this.setVisible(false);
                 trangChu trangChu = new trangChu();
-                trangChu trangChu1 = new trangChu(name,pass);
-                trangChu.detail(this.userName,this.pass);
-                trangChu.editlUser(this.userName,this.pass);
+                trangChu trangChu1 = new trangChu(name, pass);
+                trangChu.detail(this.userName, this.pass);
+                trangChu.editlUser(this.userName, this.pass);
                 trangChu.HienthiDSUWorkday(id_user);
                 trangChu.setVisible(true);
 

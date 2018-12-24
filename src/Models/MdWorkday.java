@@ -17,27 +17,27 @@ public class MdWorkday {
     public int      monthday;
     public int      hours;
     
-    public MdWorkday() {
-        id              = 0;
-        user_id         = 0;
-        workday         = 0;
-        monthday        = 0;
-        hours           = 0;
-    }
-    
-    public MdWorkday(
-        int     id,
-        int     user_id,
-        int     workday,
-        int     monthday,
-        int     hours
-    )
-    {
-        this.id         =  id;
-        this.user_id    =  user_id;
-        this.workday    =  workday;
-        this.monthday   =  monthday;
-        this.hours      =  hours;
-     
-    }
+//    public MdWorkday() {
+//        id              = 0;
+//        user_id         = 0;
+//        workday         = 0;
+//        monthday        = 0;
+//        hours           = 0;
+//    }
+//    
+//    public MdWorkday(
+//        int     id,
+//        int     user_id,
+//        int     workday,
+//        int     monthday,
+//        int     hours
+//    )
+//    {
+//        this.id         =  id;
+//        this.user_id    =  user_id;
+//        this.workday    =  workday;
+//        this.monthday   =  monthday;
+//        this.hours      =  hours;
+//     
+//    }
 }

@@ -194,7 +194,9 @@ public class trangChu extends javax.swing.JFrame {
                     mdNhanVien.birthday,
                     mdNhanVien.address,
                     mdNhanVien.auther,
-                    mdNhanVien.level
+                    mdNhanVien.level,
+                    
+                    mdNhanVien.status
                 });
             }
         }
@@ -280,13 +282,10 @@ public class trangChu extends javax.swing.JFrame {
         LbDDName = new javax.swing.JLabel();
         LbDDEmail = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        JpThongKe = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbUWorkday = new javax.swing.JTable();
         JpDoiMatKhau = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        JpThongTin = new javax.swing.JPanel();
         JpTroGiup = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         JpEditInfo = new javax.swing.JPanel();
@@ -311,9 +310,7 @@ public class trangChu extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         MtDiemDanh = new javax.swing.JMenuItem();
-        MtThongke = new javax.swing.JMenuItem();
         MtChinhSuaThongTin = new javax.swing.JMenuItem();
-        MtDoiMatKhau = new javax.swing.JMenuItem();
         MtDangXuat = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         MtQuanLyNv = new javax.swing.JMenuItem();
@@ -332,10 +329,10 @@ public class trangChu extends javax.swing.JFrame {
 
         tblQuanlyNV.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Tên", "Email", "Giới tính", "Ngày sinh", "Địa chỉ", "Auth", "Level"
+                "ID", "Tên", "Email", "Giới tính", "Ngày sinh", "Địa chỉ", "Auth", "Level", "Trạng thái"
             }
         ));
         tblQuanlyNV.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -615,10 +612,6 @@ public class trangChu extends javax.swing.JFrame {
         JpDiemDanh.add(jLabel24);
         jLabel24.setBounds(20, 180, 33, 17);
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Thống kê");
-
         tbUWorkday.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -629,21 +622,8 @@ public class trangChu extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tbUWorkday);
 
-        javax.swing.GroupLayout JpThongKeLayout = new javax.swing.GroupLayout(JpThongKe);
-        JpThongKe.setLayout(JpThongKeLayout);
-        JpThongKeLayout.setHorizontalGroup(
-            JpThongKeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1106, Short.MAX_VALUE)
-        );
-        JpThongKeLayout.setVerticalGroup(
-            JpThongKeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JpThongKeLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1790, Short.MAX_VALUE))
-        );
+        JpDiemDanh.add(jScrollPane2);
+        jScrollPane2.setBounds(410, 52, 700, 660);
 
         jLabel2.setText("Đổi mật khẩu");
 
@@ -662,17 +642,6 @@ public class trangChu extends javax.swing.JFrame {
                 .addGap(153, 153, 153)
                 .addComponent(jLabel2)
                 .addContainerGap(1034, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout JpThongTinLayout = new javax.swing.GroupLayout(JpThongTin);
-        JpThongTin.setLayout(JpThongTinLayout);
-        JpThongTinLayout.setHorizontalGroup(
-            JpThongTinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1106, Short.MAX_VALUE)
-        );
-        JpThongTinLayout.setVerticalGroup(
-            JpThongTinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2118, Short.MAX_VALUE)
         );
 
         jLabel7.setText("Trợ giúp");
@@ -748,15 +717,14 @@ public class trangChu extends javax.swing.JFrame {
                         .addGroup(JpEditInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(JpEditInfoLayout.createSequentialGroup()
                                 .addGroup(JpEditInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(JpEditInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(JpEditInfoLayout.createSequentialGroup()
-                                            .addComponent(jLabel19)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel17))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JpEditInfoLayout.createSequentialGroup()
-                                            .addComponent(jLabel10)
-                                            .addGap(169, 169, 169)
-                                            .addComponent(jLabel20)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpEditInfoLayout.createSequentialGroup()
+                                        .addComponent(jLabel19)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel17))
+                                    .addGroup(JpEditInfoLayout.createSequentialGroup()
+                                        .addComponent(jLabel10)
+                                        .addGap(169, 169, 169)
+                                        .addComponent(jLabel20))
                                     .addGroup(JpEditInfoLayout.createSequentialGroup()
                                         .addComponent(txtEEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -820,20 +788,18 @@ public class trangChu extends javax.swing.JFrame {
                     .addComponent(txtEPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEUpdate)
-                .addGap(0, 2532, Short.MAX_VALUE))
+                .addGap(0, 452, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout JpBodyLayout = new javax.swing.GroupLayout(JpBody);
         JpBody.setLayout(JpBodyLayout);
         JpBodyLayout.setHorizontalGroup(
             JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JpThongKe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 1106, Short.MAX_VALUE)
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JpDiemDanh, javax.swing.GroupLayout.DEFAULT_SIZE, 1010, Short.MAX_VALUE))
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JpDoiMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(JpThongTin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(JpBodyLayout.createSequentialGroup()
                     .addComponent(JpQuanLyNhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -845,17 +811,15 @@ public class trangChu extends javax.swing.JFrame {
         );
         JpBodyLayout.setVerticalGroup(
             JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JpThongKe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 712, Short.MAX_VALUE)
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JpDiemDanh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1153, Short.MAX_VALUE))
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JpDoiMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(JpThongTin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(JpBodyLayout.createSequentialGroup()
                     .addComponent(JpQuanLyNhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(504, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JpTroGiup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(JpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -872,14 +836,6 @@ public class trangChu extends javax.swing.JFrame {
         });
         jMenu2.add(MtDiemDanh);
 
-        MtThongke.setText("Thống kê");
-        MtThongke.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MtThongkeActionPerformed(evt);
-            }
-        });
-        jMenu2.add(MtThongke);
-
         MtChinhSuaThongTin.setText("Chỉnh sửa thông tin");
         MtChinhSuaThongTin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -888,15 +844,12 @@ public class trangChu extends javax.swing.JFrame {
         });
         jMenu2.add(MtChinhSuaThongTin);
 
-        MtDoiMatKhau.setText("Đổi mật khẩu");
-        MtDoiMatKhau.addActionListener(new java.awt.event.ActionListener() {
+        MtDangXuat.setText("Đang xuất");
+        MtDangXuat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MtDoiMatKhauActionPerformed(evt);
+                MtDangXuatActionPerformed(evt);
             }
         });
-        jMenu2.add(MtDoiMatKhau);
-
-        MtDangXuat.setText("Đang xuất");
         jMenu2.add(MtDangXuat);
 
         jMenuBar1.add(jMenu2);
@@ -956,21 +909,10 @@ public class trangChu extends javax.swing.JFrame {
         JpBody.revalidate();
     }
 
-    private void MtThongkeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MtThongkeActionPerformed
-        // TODO add your handling code here:
-        rmAndAddJpanel(JpThongKe);
-        
-    }//GEN-LAST:event_MtThongkeActionPerformed
-
     private void MtChinhSuaThongTinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MtChinhSuaThongTinActionPerformed
         // TODO add your handling code here:
         rmAndAddJpanel(JpEditInfo);
     }//GEN-LAST:event_MtChinhSuaThongTinActionPerformed
-
-    private void MtDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MtDoiMatKhauActionPerformed
-        // TODO add your handling code here:
-        rmAndAddJpanel(JpDoiMatKhau);
-    }//GEN-LAST:event_MtDoiMatKhauActionPerformed
 
     private void MtDiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MtDiemDanhActionPerformed
         // TODO add your handling code here:
@@ -1125,7 +1067,7 @@ public class trangChu extends javax.swing.JFrame {
         String sex = rdbNam.isSelected() ? "1" : "0";
         String address = txtAddress.getText();
         String birthday = txtBirthday.getText();
-        String auther = cbxPremission.getSelectedItem() == "admin" ? "0" : "1";
+        String auther = cbxPremission.getSelectedItem() == "Admin" ? "0" : "1";
         int level = cbxLevels.getSelectedIndex();
 
         if (name == "" || email == "" || password == "" || sex == "" || address == "" || birthday == "" || auther == "Chọn Quuyền" || level == 0) {
@@ -1293,6 +1235,12 @@ public class trangChu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEUpdateActionPerformed
 
+    private void MtDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MtDangXuatActionPerformed
+        // TODO add your handling code here:
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_MtDangXuatActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1335,8 +1283,6 @@ public class trangChu extends javax.swing.JFrame {
     private javax.swing.JPanel JpDoiMatKhau;
     private javax.swing.JPanel JpEditInfo;
     private javax.swing.JPanel JpQuanLyNhanVien;
-    private javax.swing.JPanel JpThongKe;
-    private javax.swing.JPanel JpThongTin;
     private javax.swing.JPanel JpTroGiup;
     private javax.swing.JLabel LbDDEmail;
     private javax.swing.JLabel LbDDId;
@@ -1348,9 +1294,7 @@ public class trangChu extends javax.swing.JFrame {
     private javax.swing.JMenuItem MtChinhSuaThongTin;
     private javax.swing.JMenuItem MtDangXuat;
     private javax.swing.JMenuItem MtDiemDanh;
-    private javax.swing.JMenuItem MtDoiMatKhau;
     private javax.swing.JMenuItem MtQuanLyNv;
-    private javax.swing.JMenuItem MtThongke;
     private javax.swing.JMenuItem MtTroGiup;
     private javax.swing.ButtonGroup Sex;
     private javax.swing.JButton btnAdd;
@@ -1365,7 +1309,6 @@ public class trangChu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxLevels;
     private javax.swing.JComboBox<String> cbxPremission;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

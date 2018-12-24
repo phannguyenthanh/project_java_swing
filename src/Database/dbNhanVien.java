@@ -40,18 +40,35 @@ public class dbNhanVien {
                 ResultSet rs = stm.executeQuery(sql);
                 while (rs.next())//duyệt từng bản ghi kết quả select
                 {
-
+                    String status    =  null;
+                    if(rs.getInt("status") == 0 ){
+                        
+                        status = "Chưa điểm danh";
+                    }
+                    if(rs.getInt("status") == 1){
+                        
+                        status = "Đã điểm danh";
+                    }
+                    if(rs.getInt("status") == 2){
+                        
+                        status = "Kết thúc";
+                    }
+                    if(rs.getInt("status") == 2){
+                        
+                        status = "Đang chờ";
+                    }
                     MdNhanVien Nv = new MdNhanVien();
-                    Nv.id = rs.getInt("id");
-                    Nv.email = rs.getString("email");
-                    Nv.name = rs.getString("name");
+                    
+                    Nv.id       = rs.getInt("id");
+                    Nv.email    = rs.getString("email");
+                    Nv.name     = rs.getString("name");
                     Nv.password = rs.getString("password");
-                    Nv.sex = rs.getInt("sex") == 1 ? "Nam" : "nữ";
-                    Nv.address = rs.getString("address");
+                    Nv.sex      = rs.getInt("sex") == 1 ? "Nam" : "nữ";
+                    Nv.address  = rs.getString("address");
                     Nv.birthday = rs.getString("birthday");
-                    Nv.level = rs.getString("namelv");
-                    Nv.auther = rs.getInt("author") == 1 ? "Nhân viên" : "Admin";
-                    Nv.status = rs.getInt("status") == 0 ? "Chưa điểm danh" : "Đã điểm danh";
+                    Nv.level    = rs.getString("namelv");
+                    Nv.auther   = rs.getInt("author") == 1 ? "Nhân viên" : "Admin";
+                    Nv.status   = status;
                     ds.add(Nv);
                 }
             } catch (SQLException ex) {
