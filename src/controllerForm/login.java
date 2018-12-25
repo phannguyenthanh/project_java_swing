@@ -6,6 +6,9 @@
 package controllerForm;
 
 import Database.dblogin;
+import java.awt.AWTEvent;
+import java.awt.Toolkit;
+import java.awt.event.AWTEventListener;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,11 +17,14 @@ import javax.swing.JOptionPane;
  */
 public class login extends javax.swing.JFrame {
 
+    String userName;
+    String pass;
+
     /**
      * Creates new form login
      */
     public login() {
-        
+
         initComponents();
         this.setLocation(500, 100);
     }
@@ -33,19 +39,19 @@ public class login extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
-        txtPassword = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        txtName = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ĐĂNG NHẬP");
 
-        jLabel2.setText("Email");
+        jLabel2.setText("User name");
 
         jLabel3.setText("Password");
 
@@ -74,27 +80,27 @@ public class login extends javax.swing.JFrame {
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                         .addComponent(jButton1))
-                    .addComponent(txtName, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(27, Short.MAX_VALUE))
+                    .addComponent(txtName)
+                    .addComponent(txtPassword))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(49, 49, 49)
+                    .addComponent(jLabel3)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addGap(0, 93, Short.MAX_VALUE))
+                .addGap(100, 100, 100))
         );
 
         pack();
@@ -102,35 +108,36 @@ public class login extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
-        String name    = txtName.getText();
-        String pass     = txtPassword.getText();
-        if(name.equals(""))
-        {
-            JOptionPane.showMessageDialog(null, "Xin vui lòng nhập email .","Thông báo",JOptionPane.WARNING_MESSAGE);
-        }
-        else if(pass.equals(""))
-        {
-            JOptionPane.showMessageDialog(null, "Xin vui long nhập mật khẩu .","Thông báo",JOptionPane.WARNING_MESSAGE);
-        }
-        else
-        {
-             dblogin dblogin = new dblogin();
-             int user = dblogin.checkLogin(name,pass);
-             int id_user = dblogin.Id_User(name,pass);
-        
-            if(user==1){
+
+        String name = txtName.getText();
+        String pass = txtPassword.getText();
+
+        if (name.equals("")) {
+            JOptionPane.showMessageDialog(null, "Xin vui lòng nhập email .", "Thông báo", JOptionPane.WARNING_MESSAGE);
+        } else if (pass.equals("")) {
+            JOptionPane.showMessageDialog(null, "Xin vui long nhập mật khẩu .", "Thông báo", JOptionPane.WARNING_MESSAGE);
+        } else {
+            dblogin dblogin = new dblogin();
+            int user = dblogin.checkLogin(name, pass);
+            int id_user = dblogin.Id_User(name, pass);
+
+            System.out.println(id_user + " : login");
+            if (user == 1) {
+                this.userName = name;
+                this.pass = pass;
                 this.setVisible(false);
                 trangChu trangChu = new trangChu();
-                trangChu.Id = id_user;
+                trangChu trangChu1 = new trangChu(name, pass);
+                trangChu.detail(this.userName, this.pass);
+                trangChu.editlUser(this.userName, this.pass);
+                trangChu.HienthiDSUWorkday(id_user);
                 trangChu.setVisible(true);
-                
-            }else
-            {
-                JOptionPane.showMessageDialog(null, "Mật khẩu hoặc email không chính xác .","Thông báo",JOptionPane.WARNING_MESSAGE);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Mật khẩu hoặc email không chính xác .", "Thông báo", JOptionPane.WARNING_MESSAGE);
             }
         }
-       
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -175,6 +182,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
 }
